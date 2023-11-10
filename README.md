@@ -61,7 +61,7 @@ The project incorporates several features:
     Note : for gmail users only
 - Configure the necessary settings in the project for email integration.
 - The project includes built-in triggers for audit logging. Ensure that triggers are enabled in your MySQL environment.
-- Backend is done with django(try to have some basic django knowledge) , here th django command you need to know:
+- Backend is done with django(try to have some basic django knowledge) , here are the django command you need to know:
     - python manage.py runserver  (run the code , visit the specific urls , as mentioned in the url.py to access pages . Ideally start from login)
     - python manage.py makemigrations
     - python manage.py migrate (these two lines should be run everytime something is added or changed in the database which may affect the structure)
