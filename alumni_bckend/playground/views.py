@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Alumni
+from .models import Alumni, Batch
 from django.db import connection , ProgrammingError
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
@@ -228,3 +228,15 @@ def delete_job_opening(request, job_id):
         return redirect('job_openings')
     
     return render(request, 'delete_job_opening.html', {'job': job})
+
+def call_stored_procedure(p_graduation_year):
+    with connection.cursor() as cursor:
+        cursor.callproc('GetAlumniByGraduationYear', [p_graduation_year])
+        results = cursor.fetchall()
+    return results
+
+
+def alumni_by_graduation_year(request, graduation_year):
+    alumni_list = call_stored_procedure(graduation_year)
+    context = {'alumni_list': alumni_list, 'graduation_year': graduation_year}
+    return render(request, 'procedure.html', context)
