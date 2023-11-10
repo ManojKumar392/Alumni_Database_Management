@@ -36,8 +36,6 @@ The project incorporates several features:
 
 3. **CRUD Operations:**
    - Pages are provided for basic CRUD operations.
-   - SQL enthusiasts can enter their own queries, but update, delete, and create operations are restricted for non-alumni users.
-   - The system allows downloading query results in CSV format.
 
 4. **Job Opening Portal:**
    - A dedicated portal for job openings (`playground_jobopening` table).
