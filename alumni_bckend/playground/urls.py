@@ -18,6 +18,7 @@ urlpatterns = [
     path('add_job_opening/', views.add_job_opening, name='add_job_opening'),
     path('delete_job_opening/<int:job_id>/', views.delete_job_opening, name='delete_job_opening'),
     path('job_openings/',views.job_openings,name='job_openings'),
+    path('alumni_by_year/<int:graduation_year>/', views.alumni_by_graduation_year, name='alumni_by_year'),
 ]
 
 if settings.DEBUG:
