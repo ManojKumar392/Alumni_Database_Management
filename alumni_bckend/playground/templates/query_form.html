@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQL Query Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F5F5;
+            text-align: center;
+        }
+        h1 {
+            color: #3498DB;
+        }
+        form {
+            max-width: 500px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 15px 0px #ccc;
+        }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            height: 200px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #3498DB;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #267bb7;
+        }
+    </style>
+</head>
+<body>
+    <h1>SQL Query Form</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="user_query">Enter your SQL query:</label>
+        <textarea name="user_query" rows="10"></textarea>
+        <br>
+        <button type="submit" name="action" value="execute">Execute Query</button>
+        <button type="submit" name="action" value="download">Download CSV</button>
+    </form>
+</body>
+</html>

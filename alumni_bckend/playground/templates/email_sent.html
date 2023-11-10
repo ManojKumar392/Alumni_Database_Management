@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Sent</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #00a6ff, #0072ff);
+            color: #fff;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            font-size: 36px;
+            margin: 0 0 20px;
+            animation: bounce 1.5s infinite;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff5500;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #e64500;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-20px);
+            }
+            60% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    {% if email_sent and alumni %}
+    <h1>Email Sent</h1>
+    <p>Email sent successfully to {{ alumni.name }}.</p>
+    {% else %}
+    <h1>Email not Sent</h1>
+    <p>Alumni not found. Email not sent.</p>
+    {% endif %}
+    <a href="{% url 'send_email' %}">Go back</a>
+</body>
+</html>

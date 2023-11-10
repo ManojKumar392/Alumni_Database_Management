@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Openings</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            text-align: left;
+        }
+
+        
+        li {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            transition: transform 0.2s, z-index 0s; 
+        }
+
+        li:hover {
+            z-index: 1; 
+            transform: scale(1.05) translateX(10px); 
+        }
+
+        button {
+            background-color: #e74c3c;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3498db;
+            margin: 5px;
+        }
+
+        .add-button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Job Openings</h1>
+    <a href="{% url 'add_job_opening' %}" class="add-button">Add Job Opening</a>
+    <ul>
+        {% for job in job_listings %}
+            <li>
+                <strong>{{ job.title }}</strong>
+                <p>{{ job.description }}</p>
+                <p>Application Deadline: {{ job.application_deadline }}</p>
+                <p>Posted by: {{ job.alumni.First_name }} {{ job.alumni.Last_name }}</p>
+                
+                <form method="post" action="{% url 'delete_job_opening' job.id %}">
+                    {% csrf_token %}
+                    <button type="submit">Remove</button>
+                </form>
+                
+                <a href="https://example.com/job-application-page">Apply</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SQL Query Builder</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>SQL Query Builder</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="crud_operation">Select CRUD Operation:</label>
+        <select name="crud_operation">
+            <option value="SELECT">SELECT</option>
+            <option value="INSERT">INSERT</option>
+            <option value="UPDATE">UPDATE</option>
+            <option value="DELETE">DELETE</option>
+        </select>
+
+        <label for="table_name">Table Name:</label>
+        <input type="text" name="table_name" required>
+
+        <label for="column_names">Column Names (comma-separated):</label>
+        <input type="text" name="column_names" required>
+
+        <label for="conditions">Conditions:</label>
+        <textarea name="conditions" rows="5"></textarea>
+
+        <button type="submit">Build and Execute Query</button>
+    </form>
+</body>
+</html>

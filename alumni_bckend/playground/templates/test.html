@@ -1,0 +1,28 @@
+<table border="1">
+    <tr>
+        <th>Alumni ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Address</th>
+        <th>Contact Number</th>
+        <th>Minors</th>
+        <th>Batch ID</th>
+        <th>Position ID</th>
+        <th>Donation ID</th>
+    </tr>
+    {% for alum in data %}
+    <tr>
+        <td>{{ alum.Alumni_ID }}</td>
+        <td>{{ alum.First_name }}</td>
+        <td>{{ alum.Last_name }}</td>
+        <td>{{ alum.Email }}</td>
+        <td>{{ alum.Address }}</td>
+        <td>{{ alum.Contact_No }}</td>
+        <td>{{ alum.minors }}</td>
+        <td>{{ alum.Batch_id }}</td>
+        <td>{{ alum.Position_id }}</td>
+        <td>{{ alum.Donation_id }}</td>
+    </tr>
+    {% endfor %}
+</table>

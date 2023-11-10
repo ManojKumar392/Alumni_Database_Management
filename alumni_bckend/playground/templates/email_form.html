@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Email to Alumni</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f8f8f8, #e6e6e6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .email-form {
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 30px;
+            width: 350px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007BFF;
+            margin: 0 0 20px;
+            font-size: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        input[type="text"], textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f7f7f7;
+        }
+
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-form">
+        <h1>Send Email to Alumni</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="id_first_name">First Name:</label>
+                {{ form.first_name }}
+            </div>
+            <div class="form-group">
+                <label for="id_last_name">Last Name:</label>
+                {{ form.last_name }}
+            </div>
+            <div class="form-group">
+                <label for="id_subject">Email Subject:</label>
+                {{ form.subject }}
+            </div>
+            <div class="form-group">
+                <label for="id_message">Email Message:</label>
+                {{ form.message }}
+            </div>
+            <button type="submit">Send Email</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Table List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            color: #333;
+            text-align: center;
+        }
+        h1 {
+            font-size: 28px;
+            margin: 20px 0;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 10px 0;
+            transition: transform 0.3s ease-in-out;
+        }
+        li:hover {
+            transform: scale(1.05); /* Enlarge on hover */
+        }
+        li a {
+            text-decoration: none;
+            background-color: #2E86C1;
+            color: #fff;
+            border: 2px solid #186A9F;
+            border-radius: 25px;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease-in-out;
+            display: block;
+        }
+        li a:hover {
+            background-color: #186A9F;
+        }
+    </style>
+</head>
+<body>
+    <h1>Available Tables</h1>
+    <ul>
+        {% for table in tables %}
+            {% if table in table_names %}
+                <li><a href="{% url 'view_table' table %}">{{ table }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+</body>
+</html>

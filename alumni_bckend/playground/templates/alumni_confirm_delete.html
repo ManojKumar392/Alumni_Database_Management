@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Alumni Deletion</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+        }
+        strong {
+            font-weight: bold;
+        }
+        form {
+            display: inline;
+        }
+        button {
+            background-color: #ff0000;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #cc0000;
+        }
+        a {
+            display: inline-block;
+            margin-top: 10px;
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Confirm Alumni Deletion</h1>
+
+    <p>Are you sure you want to delete the alumni with the following details?</p>
+
+    <p><strong>Alumni Name:</strong> {{ first_name }} {{ last_name }}</p>
+    <!-- Include any other alumni details you want to display here -->
+
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Confirm Deletion</button>
+    </form>
+
+    <a href="{% url 'alumni_list' %}">Cancel</a>
+</body>
+</html>

@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sucessfull</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        .message {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 60%;
+            margin: 0 auto;
+        }
+        .tick {
+            color: #2ECC71; /* Green color */
+            font-size: 48px; /* Adjust the size as needed */
+            animation: scaleUp 0.5s ease-in-out; /* Animation for emphasis */
+        }
+        @keyframes scaleUp {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="message">
+        <p class="tick">✓</p> <!-- Unicode character for the tick mark -->
+        
+        <a href="{% url 'choose' %}">Back</a>
+    </div>
+</body>
+</html>

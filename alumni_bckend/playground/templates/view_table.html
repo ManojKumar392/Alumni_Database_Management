@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ table_name }}</title>
+    <style>
+        /* Apply a clean and professional background */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        /* Style the header with a background color and centered text */
+        h1 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        /* Style the table */
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style table headers */
+        th {
+            background-color: #333;
+            color: #fff;
+            text-align: left;
+            padding: 12px;
+        }
+
+        /* Style even and odd table rows for better readability */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        /* Style table data cells */
+        td {
+            padding: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>{{ table_name }}</h1>
+    <table>
+        <thead>
+            <tr>
+                {% for column in columns %}
+                    <th>{{ column }}</th>
+                {% endfor %}
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+                <tr>
+                    {% for value in row %}
+                        <td>{{ value }}</td>
+                    {% endfor %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Management</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #3494e6, #ec6ead);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+            color: #fff;
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .action-buttons a {
+            background-color: #fff;
+            color: #3494e6;
+            border: 2px solid #186A9F;
+            border-radius: 25px;
+            padding: 20px 40px;
+            margin: 20px;
+            text-align: center;
+            display: inline-block;
+            font-size: 1.2em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out, transform 0.2s;
+        }
+
+        .action-buttons a:hover {
+            background-color: #186A9F;
+            color: #fff;
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .small-link {
+            margin-top: 30px;
+            font-size: 1em;
+        }
+
+        .small-link a {
+            color: #fff;
+            text-decoration: none;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .small-link a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome!</h1>
+    <p>You have successfully logged in. What would you like to do?</p>
+    <div class="action-buttons">
+        <a href="{% url 'list_tables' %}">View Information</a> 
+        <a href="{% url 'alumni_create' %}">Add Alumni</a>
+        <a href="{% url 'alumni_update' %}">Update Alumni</a>
+        <a href="{% url 'delete_alumni' %}">Delete Alumni</a>
+    </div>
+    <div class="small-link">
+        <a href="{% url 'query' %}">Write Your Own Query</a>
+    </div>
+    <div class="action-buttons">
+        <a href="{% url 'job_openings' %}">Job Openings</a>
+        <a href="{% url 'send_email' %}">Send Email</a>
+    </div>
+</body>
+</html>

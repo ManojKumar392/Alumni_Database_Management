@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            /* background: linear-gradient(to bottom, #2980B9, #156AC8); */
+            background: url("https://www.eduoneinternational.com/wp-content/uploads/2022/04/pesmba.jpg");
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-size: cover; 
+        }
+
+        .login-container {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            width: 400px;
+            text-align: center; /* Center text within the container */
+        }
+
+        .login-container h1 {
+            color: #2980B9;
+            font-size: 28px;
+            margin-bottom: 20px; /* Add margin below the heading */
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 20px; /* Center the logo and add margin below it */
+            display: block; /* Ensures the margin works correctly */
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        input[type="SRN"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #2980B9;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        button[type="submit"] {
+            background-color: #2980B9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #156AC8;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <img src="https://s2e9a3m3.rocketcdn.me/wp-content/uploads/pes-university-logo.png" alt="Your Logo" class="logo">
+        <h1>Welcome Back!</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Log In</button>
+        </form>
+    </div>
+</body>
+</html>

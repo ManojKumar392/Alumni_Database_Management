@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Alumni</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        form {
+            background-color: #ffffff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            width: 60%;
+            margin: 0 auto;
+        }
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button[type="submit"] {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Delete Alumni</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="first_name">First Name:</label>
+        <input type="text" name="first_name" id="first_name">
+        <label for="last_name">Last Name:</label>
+        <input type="text" name="last_name" id="last_name">
+        <button type="submit">Delete Alumni</button>
+    </form>
+</body>
+</html>
